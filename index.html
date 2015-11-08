@@ -9,11 +9,9 @@
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <!--<link async href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">-->
-   
-
     <link href="css/style.css" rel="stylesheet">
-   
-     
+    <script async src="js/perfmatters.js"></script>
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" >  
   </head>
 
   <body>
@@ -66,18 +64,17 @@
     </div>
 
     <footer>
-     <link rel="shortcut icon" href="/img/specialicon.ico" type="image/x-icon" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
-	<script>
-	  WebFont.load({
-		google: {
-		  families: ['Open+Sans:400,700']
-		}
-	  });
-    </script>
-     <link async href="css/print.css" media="print" rel="stylesheet">
-    <script async src="js/perfmatters.js"></script>
-      <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
+        <link async href="css/print.css" media="print" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+        <script>
+          WebFont.load({
+            google: {
+              families: ['Open+Sans:400,700']
+            }
+          });
+        </script>
+       
+          <p>&copy; Web Performance 2014 </p>
     </footer>
   </body>
 </html>
