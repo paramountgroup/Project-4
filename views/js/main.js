@@ -526,6 +526,8 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   console.log("Average time to generate last 10 frames: " + sum / 10 + "ms");
 }
 
+
+/*
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
@@ -549,6 +551,53 @@ function updatePositions() {
     logAverageFrame(timesToUpdatePosition);
   }
 }
+
+*/
+
+
+function updatePositions() {
+    frame++;
+	
+	window.performance.mark("mark_start_frame");
+
+    var top = document.body.scrollTop;
+
+    var constArray = [];
+
+    var i;
+
+    // This generates the same five values which were always repeating in the
+    // longer loop, and places them in `constArray`, which holds these five
+    // constant, repeating values:
+    for (i = 0; i < 5; i++) {
+      constArray.push(Math.sin((top / 1250) + i));
+    }
+
+
+    // Now this for-loop can get the usual value for phase by pulling it out of
+    // the constant array. This works because the non-optimal code was doing a
+    // lot of work just to calculate and re-calculate and re-calculate the same
+    // five values we stored in the constant array.
+    for (i = 0; i < items.length; i++) {
+        var phase = constArray[i % 5];
+
+        items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    }
+	// Super easy to create custom metrics.
+	window.performance.mark("mark_end_frame");
+	window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
+	if (frame % 10 === 0) {
+	   // User Timing API to the rescue again. Seriously, it's worth learning.
+	 var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+	  logAverageFrame(timesToUpdatePosition);
+	}
+}
+
+ // You can OPTIMIZE further by allowing `items` to be created and assigned
+    // at a higher, longer-lived scope than `updatePositions`, because `items`
+    // will never be a different value at any point in time after the "mover"
+    // pizzas have been placed on the page:
+    var items = document.getElementsByClassName('mover');
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
