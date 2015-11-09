@@ -554,6 +554,7 @@ function updatePositions() {
 
 */
 
+// OPTIMIZATION from forum mentor MCS https://gist.github.com/prather-mcs/05526bb379f845ee2ba1
 
 function updatePositions() {
     frame++;
@@ -609,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < 200; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "images/pizza.png"; // OPTIMIZE Pizza image using photoshop
+    elem.src = "images/pizza.png";     // OPTIMIZE Pizza image using photoshop to reduce file size
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
