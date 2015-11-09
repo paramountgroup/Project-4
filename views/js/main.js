@@ -403,16 +403,24 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
-  function changeSliderLabel(size) {
+  
+   function changeSliderLabel(size) {
+	  
+	  // OPTIMIZE by using getElementById instead of querySelector
+	  
+	var pizzaSizeById = document.getElementById('pizzaSize');
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+		pizzaSizeById.innerHTML = "Small";
+        //document.querySelector("#pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+		pizzaSizeById.innerHTML = "Medium";
+       // document.querySelector("#pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+		pizzaSizeById.innerHTML = "Large";
+        //document.querySelector("#pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
