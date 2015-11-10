@@ -1,4 +1,4 @@
-Website Performance Optimization portfolio project-4
+***Website Performance Optimization portfolio project-4***
 
 The Goal of project-4 is optimize the given website to achieve a pagespeed of 90 in Google PageSpeed insights and for main.js to achieve 60 fps scrolling and 5ms load for size change.
 
