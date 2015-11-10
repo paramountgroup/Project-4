@@ -11,14 +11,14 @@ The project was uploaded paramountmedia.us and uses Cloudflare CDN services;
 
 Cloudflare accomplishes the following tasks
 
-minimizes css, js and HTML files
+*****AUTOMATICALLY MINIMIZES css, js and HTML files and MUCH MORE******
 send files to browsers using compression
 sets cache for static content
 uses polish for faster image load time
 rocket loader for improve js load
 option to set browser caching 1 year
 
-Images were optimized with photoshop and pagespeed insights recommended files
+Images were optimized with photoshop and *****pagespeed insights automatically optimized files  *****
 
 Eliminate render-blocking JavaScript and CSS in above-the-fold content:
 style.css inlined in index.html.
