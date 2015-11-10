@@ -602,7 +602,7 @@ function updatePositions() {
 	}
 }
 
- // You can OPTIMIZE further by allowing `items` to be created and assigned
+ //OPTIMIZE further by allowing `items` to be created and assigned
     // at a higher, longer-lived scope than `updatePositions`, because `items`
     // will never be a different value at any point in time after the "mover"
     // pizzas have been placed on the page:
